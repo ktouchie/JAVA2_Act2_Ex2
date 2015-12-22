@@ -7,20 +7,38 @@ class maxmin{
         
         int min, max, i, j, a, b;
         
-        for (i=0, a=tab.length-1; i<tab.length-1, a>0; i++, a--) {         //i looks for min, a looks for max
+        for (i=0; i<tab.length-1; i++) {
             
-            min = i;
-            max = a;
+            for (a=tab.length-1; a>0; a--) {
+
+                int min = i;
+                int max = a;
             
-            for (j=i+1; j<tab.length; j++) {
-                
-                if (tab[j]>tab[min]) {                    
-                    min = j;
+                for (j=i+1; j<tab.length; j++) {
+                    
+                    if (tab[j]<tab[min]) {                    
+                        min = j;
+                    }
                 }
+                
+                if (min != i) {
+                    swap(tab, i, min);
+                }
+                
+                for (b=a-1; b>=0; b--) {
+                    
+                    if (tab[b]>tab[max]) {
+                        max = b;
+                    }
+                }
+                
+                if (max != a) {
+                    swap(tab, a, max);
+                }
+                
+                
             }
-            if (min != i) {
-                swap(tab, i, min);
-            }
+
         }
         
     }
