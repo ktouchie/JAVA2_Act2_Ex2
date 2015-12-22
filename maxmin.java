@@ -7,8 +7,27 @@ class maxmin{
         
         int min, max, i, j, a, b;
         
-        for ()
+        for (i=0, a=tab.length-1; i<tab.length-1, a>0; i++, a--) {         //i looks for min, a looks for max
+            
+            min = i;
+            max = a;
+            
+            for (j=i+1; j<tab.length; j++) {
+                
+                if (tab[j]>tab[min]) {                    
+                    min = j;
+                }
+            }
+            if (min != i) {
+                swap(tab, i, min);
+            }
+        }
         
     }
     
+    public static void swap(X[], y, z) {
+        int p = X[y];
+        X[y] = X[z];
+        X[z] = p;
+    }
 }
