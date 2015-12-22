@@ -11,8 +11,8 @@ class maxmin{
             
             for (a=tab.length-1; a>0; a--) {
 
-                int min = i;
-                int max = a;
+                min = i;
+                max = a;
             
                 for (j=i+1; j<tab.length; j++) {
                     
@@ -40,6 +40,8 @@ class maxmin{
             }
 
         }
+        
+        System.out.println(Arrays.toString(tab));
         
     }
     
