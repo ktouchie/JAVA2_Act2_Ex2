@@ -38,7 +38,7 @@ class maxmin{
                 
                 
             }
-
+            System.out.println(Arrays.toString(tab));
         }
         
         System.out.println(Arrays.toString(tab));
